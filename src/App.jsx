@@ -4,11 +4,24 @@ import Heading from './components/Heading'
 import Card from './components/Card'
 import contacts from './components/contacts'
 
+function createCard(contact) {
+  return <Card 
+  name={contact.name}  
+  img={contact.imgURL}
+  phone={contact.phone}
+  email={contact.email}
+  />
+}
+
 function App() {
   return (
   <div>
     <Heading />
-    <Card
+    {contacts.map(createCard)}
+
+    {/* Using .map() instead */}
+    
+    {/* <Card
       name={contacts[0].name}
       img={contacts[0].imgURL}
       phone={contacts[0].phone}
@@ -27,7 +40,7 @@ function App() {
       img={contacts[2].imgURL}
       phone={contacts[2].phone}
       email={contacts[2].email}
-     />
+     /> */}
   </div>
   )
  
