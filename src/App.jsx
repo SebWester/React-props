@@ -6,6 +6,7 @@ import contacts from './components/contacts'
 
 function createCard(contact) {
   return <Card 
+  key={contact.id}
   name={contact.name}  
   img={contact.imgURL}
   phone={contact.phone}
@@ -20,7 +21,7 @@ function App() {
     {contacts.map(createCard)}
 
     {/* Using .map() instead */}
-    
+
     {/* <Card
       name={contacts[0].name}
       img={contacts[0].imgURL}
